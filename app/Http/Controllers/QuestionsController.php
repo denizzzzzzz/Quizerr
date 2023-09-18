@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Inertia\Inertia;
 
 class QuestionsController extends Controller
 {
@@ -18,11 +19,10 @@ class QuestionsController extends Controller
             $file = $request->file('csv_file');
             $data = array_map('str_getcsv', file($file->getPathname()));
 
-            // Check if the header row exists
             if (count($data) > 0) {
-                // Skip the first row (header row) and start from index 1
+
                 for ($i = 1; $i < count($data); $i++) {
-                    // Check if the current row has enough columns
+
                     if (count($data[$i]) >= 6) {
                         Question::create([
                             'question_id' => $data[$i][0],
@@ -33,16 +33,24 @@ class QuestionsController extends Controller
                             'correct_answer' => $data[$i][5],
                         ]);
                     } else {
-                        // Log an error for rows with insufficient columns
+
                         Log::error('Row ' . ($i + 1) . ' in the CSV file does not have enough columns.');
                     }
                 }
             } else {
-                // Log an error for an empty CSV file
+
                 Log::error('The CSV file is empty.');
             }
         }
 
         return redirect('/')->with('success', 'CSV file uploaded and data inserted successfully');
+    }
+    public function index()
+    {
+        $questions = Question::all(); 
+    
+        return Inertia::render('Quiz/QuestionsComponent', [
+            'questions' => $questions,
+        ]);
     }
 }

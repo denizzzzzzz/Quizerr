@@ -1,47 +1,37 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Russo+One&display=swap" rel="stylesheet">
-        <title>Quizerr</title>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <header>
-            <ul>
-                <li><a href="{{ url('/') }}">Q </a></li>
-                <li>FAQ</li>
-                <li>Quiz</li>
-                <li>Extra uitleg</li>
-                       @if (Route::has('login'))
-                    @auth
-                    <li> <a href="{{ url('/dashboard') }}" >Dashboard</a></li>
-                       
-                    @else
-                    <li> <a href="{{ route('login') }}" >Login</a></li>
-                        @if (Route::has('register'))
-                        <li>
-                            <a href="{{ route('register') }}" >Registreer</a>
-                            </li>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </ul>
-        </header>
-    <body> 
-        <div >
-     
-        
-        <div class="banner">
-            <div class="slogan-container">
+@extends('layouts.app')
+
+@section('content')
+<div>
+    <div class="banner">
+        <div class="slogan-container">
             <h1>Quizerr</h1>
             <h4>Waar kennis getest word.</h4>
-            </div>
-            <button>Starten</button>
         </div>
-      
-    </body>
-</html>
+        <button> <a href="{{ route('quiz') }}"> Start de Quiz</a></button>
+    </div>
+    <div class="cta_container">
+        <h2 class="big-title">Learn, Review, Repeat</h2>
+        <div class="steps-container">
+            <div>
+                <img src="{{ asset('img/Learn-Image.svg') }}" alt="Learning Image" />
+                <h2>Learn</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and </p>
+            </div>
+            <div>
+                <img src="{{ asset('img/Review-Image.svg') }}" alt="Review Image" />
+                <h2>Review</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and </p>
+            </div>
+            <div>
+                <img src="{{ asset('img/Repeat-Image.svg') }}" alt="Repeat Image" />
+                <h2>Repeat</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and </p>
+            </div>
+        </div>
+        <button class="cta_button">Start de Quiz</button>
+    </div>
+    <div class="quote">
+        <h1>“You don’t understand anything until you learn it more than one way.”</h1>
+    </div>
+</div>
+@endsection

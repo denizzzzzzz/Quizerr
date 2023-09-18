@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Rubik+Mono+One&display=swap');
+
+
+header ul{
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    padding: 0px;
+    height: 63px;
+}
+header li{
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    list-style: none;
+    cursor: pointer;
+    transition: ease.2s;
+}
+header li:hover{
+    color: #3726FF;
+}
+header{
+    position: absolute;
+    width: 100vw;
+}
+header img{
+    width: 80px;
+}
+
+.footer-container{
+    display: flex;
+justify-content: center;
+gap: 400px;
+padding: 40px;
+}
+.logo-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-footer img{
+    width: 100px;
+}
+.logo-footer h3{
+    font-size: 70px;
+    color: black;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400;
+}
+.footer-container .middle h5{
+    font-size: 24px;
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    font-weight: 100;
+    margin-top: -52px;
+}
+footer{
+    border-top: solid 4px #cfcfcf;
+}
+.question-count h2{
+    background-color: black;
+    font-size: 24px;
+    border-radius: 50px;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: white;
+    width: 147px;
+    height: 17px;
+    position: fixed;
+    top: 2px;
+    padding: 10px 7px 20px 55px;
+    right: 10px;
+    font-weight: 100;
+}
+.questions-container{
+    padding: 200px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.question{
+    font-family: 'Cabin', sans-serif;
+    font-size: 42px;
+    text-align: center;
+}
+.error-no-questions{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Rubik Mono One', sans-serif;
+    color: red;
+    padding: 300px 0px;
+}

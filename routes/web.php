@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionsController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/quiz', function(){
+//     return Inertia::render('Quiz/QuestionsComponent');
+// })->name('quiz');
+Route::get('/quiz', [QuestionsController::class, 'index'])->name('quiz');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
