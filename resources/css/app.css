@@ -1,9 +1,12 @@
+/* Importeer lettertypen */
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Rubik+Mono+One&display=swap');
 
-.quiz{
-
+/* Algemene stijl voor de quizcontainer */
+.quiz {
     margin: -10px!important;
 }
+
+/* Stijl voor de header met navigatie */
 header ul {
     display: flex;
     gap: 70px;
@@ -34,6 +37,7 @@ header img {
     width: 80px;
 }
 
+/* Stijl voor de footercontainer */
 .footer-container {
     display: flex;
     justify-content: center;
@@ -41,6 +45,7 @@ header img {
     padding: 40px;
 }
 
+/* Stijl voor het footerlogo */
 .logo-footer {
     display: flex;
     justify-content: center;
@@ -58,6 +63,7 @@ header img {
     font-weight: 400;
 }
 
+/* Stijl voor de middensectie van de footer */
 .footer-container .middle h5 {
     font-size: 24px;
     font-family: 'Cabin', sans-serif;
@@ -66,12 +72,17 @@ header img {
     margin-top: -52px;
 }
 
+/* Stijl voor de bovenkant van de footer */
 footer {
     border-top: solid 4px #cfcfcf;
 }
-.quiz body{
+
+/* Stijl voor de body van de quizpagina */
+.quiz body {
     overflow: hidden;
 }
+
+/* Stijl voor de vraagnummerindicator */
 .question-count h2 {
     background-color: black;
     font-size: 24px;
@@ -87,6 +98,7 @@ footer {
     font-weight: 100;
 }
 
+/* Stijl voor de container van de vragen */
 .questions-container {
     padding: 80px 0px 138px 0px;
     display: flex;
@@ -94,6 +106,7 @@ footer {
     align-items: center;
 }
 
+/* Stijl voor de vraagtekst */
 .question {
     font-family: 'Cabin', sans-serif;
     font-size: 42px;
@@ -104,6 +117,7 @@ footer {
     font-weight: 100;
 }
 
+/* Stijl voor de foutmelding bij ontbrekende vragen */
 .error-no-questions {
     text-align: center;
     font-size: 60px;
@@ -112,6 +126,7 @@ footer {
     padding: 300px 0px;
 }
 
+/* Stijl voor de antwoordknop A */
 .answer_a {
     background-color: #3726FF;
     color: white;
@@ -141,6 +156,7 @@ footer {
     margin: 10px 35px 0px 10px;
 }
 
+/* Stijl voor de antwoordknop B */
 .answer_b {
     background-color: #DC136C;
     color: white;
@@ -170,6 +186,7 @@ footer {
     margin: 10px 35px 0px 10px;
 }
 
+/* Stijl voor de antwoordknop C */
 .answer_c {
     background-color: #FFBF00;
     color: white;
@@ -199,6 +216,7 @@ footer {
     margin: 10px 35px 0px 10px;
 }
 
+/* Stijl voor de container van de antwoordknoppen */
 .answer_container {
     display: flex;
     row-gap: 20px;
@@ -207,41 +225,56 @@ footer {
     justify-content: center;
 }
 
+/* Stijl voor de navigatieknoppen */
 .navi-buttons {
     margin-bottom: 200px;
     display: flex;
     justify-content: center;
 }
-.check-button{
+
+.check-button {
     padding: 20px;
     font-size: 32px;
     font-family: 'Rubik Mono One', sans-serif;
 }
+
+/* Stijl voor geselecteerd antwoord */
 .answer_selected {
     background-color: black;
 }
-.correct-answer{
+
+/* Stijl voor het correcte antwoord */
+.correct-answer {
     background-color: #50eb10;
 }
 
-.wrong-answer{
+/* Stijl voor het verkeerde antwoord */
+.wrong-answer {
     background-color: red;
 }
-.formpje{
+
+/* Stijl voor een tijdelijk formulier (bijvoorbeeld voor resultaten) */
+.formpje {
     padding: 600px 0px;
 }
-.quiz-complete-message{
+
+/* Stijl voor de melding bij het voltooien van de quiz */
+.quiz-complete-message {
     text-align: center;
 }
-.get-results{
+
+/* Stijl voor de knop om resultaten op te halen */
+.get-results {
     margin: 300px;
     padding: 20px;
     font-size: 32px;
     font-family: 'Rubik Mono One', sans-serif;
 }
+
+/* Animatie voor langzame fade-in */
 @keyframes fadeInSlow {
     from {
-        transform: scale(0);;
+        transform: scale(0);
     }
 
     to {
@@ -253,6 +286,7 @@ footer {
     animation: fadeInSlow 1s ease;
 }
 
+/* Animatie voor fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;

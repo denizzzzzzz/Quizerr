@@ -1,26 +1,37 @@
+/* Base styles provided by Tailwind CSS */
 @tailwind base;
+
+/* Component styles provided by Tailwind CSS */
 @tailwind components;
+
+/* Utility classes provided by Tailwind CSS */
 @tailwind utilities;
-.banner{
+
+/* Banner styling */
+.banner {
     background-image: url("../img/Background-Happy-Students.jpg");
     background-size: cover;
     height: 800px;
     width: 100vw;
 }
-body{
-overflow-x: hidden;
+
+/* Body styles */
+body {
+    overflow-x: hidden;
     font-family: 'Rubik Mono One', sans-serif;
-  margin: 0px;
+    margin: 0px;
 }
 
-header ul{
+/* Header styles */
+header ul {
     display: flex;
     gap: 70px;
     align-items: center;
     padding: 0px;
     height: 63px;
 }
-header li{
+
+header li {
     font-family: 'Rubik Mono One', sans-serif;
     font-weight: 400;
     font-size: 30px;
@@ -28,42 +39,50 @@ header li{
     cursor: pointer;
     transition: ease.2s;
 }
-header li:hover{
+
+header li:hover {
     color: #3726FF;
 }
-header{
+
+header {
     position: absolute;
     width: 100vw;
 }
-header img{
+
+header img {
     width: 80px;
 }
-.slogan-container{
+
+/* Slogan container styles */
+.slogan-container {
     color: white;
     background: #32323271;
-    color: white;
-    text-align: center; 
+    text-align: center;
     position: absolute;
     top: 28%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 60px;
 }
-.slogan-container h1{
+
+.slogan-container h1 {
     font-size: 80px;
     padding: 0px 237px;
     line-height: 0px;
     letter-spacing: 3px;
     opacity: .9;
 }
-.slogan-container h4{
+
+.slogan-container h4 {
     font-size: 22px;
     font-weight: 100;
-    top:-40px;
+    top: -40px;
     opacity: .9;
 }
-.banner button a{
-background: #3726FF;
+
+/* Button styles within the banner */
+.banner button a {
+    background: #3726FF;
     font-size: 43px;
     font-family: 'Rubik Mono One', sans-serif;
     color: white;
@@ -80,11 +99,13 @@ background: #3726FF;
     transition: ease .2s;
 }
 
-.banner button a:hover{
+.banner button a:hover {
     background: #ff0000;
     letter-spacing: 5px;
 }
-.auth-button a{
+
+/* Auth button styles */
+.auth-button a {
     text-decoration: none;
     color: white;
     background: rgb(43, 42, 42);
@@ -94,15 +115,19 @@ background: #3726FF;
     border-radius: 111px;
     transition: ease.2s;
 }
-.auth-button a:hover{
+
+.auth-button a:hover {
     background: black;
     color: white;
 }
-li.auth-button{
-    margin-left:auto;
+
+/* Styles for elements within the login container */
+li.auth-button {
+    margin-left: auto;
     margin-right: 20px;
 }
-.auth-button form button{
+
+.auth-button form button {
     text-decoration: none;
     color: white;
     background: rgb(43, 42, 42);
@@ -112,22 +137,29 @@ li.auth-button{
     border-radius: 111px;
     transition: ease.2s;
 }
-.auth-button form button:hover{
+
+.auth-button form button:hover {
     background: black;
     color: white;
 }
-.login-container img{
+
+/* Login container styles */
+.login-container img {
     width: 70px;
 }
-.login-container{
+
+.login-container {
     text-align: center;
     margin: 100px 0px;
 }
-.login-container h1{
+
+.login-container h1 {
     font-size: 42px;
     font-family: 'Cabin', sans-serif;
     font-weight: 100;
 }
+
+/* Form styles */
 form {
     max-width: 460px;
     margin: 0 auto;
@@ -143,7 +175,6 @@ label {
     font-size: 24px;
 }
 
-
 input[type="email"],
 input[type="password"] {
     width: 100%;
@@ -154,12 +185,12 @@ input[type="password"] {
     font-size: 14px;
 }
 
-
+/* Remember me checkbox styles */
 #remember_me {
-    margin: 30px  0px 40px 0px;
+    margin: 30px 0px 40px 0px;
 }
 
-
+/* Submit button styles */
 button[type="submit"] {
     background-color: #000000;
     color: #fff;
@@ -170,89 +201,114 @@ button[type="submit"] {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
     margin-top: 40px;
-    width:100%;
+    width: 100%;
     font-family: 'Cabin', sans-serif;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
 }
+
+/* Anchor link styles */
 a {
     text-decoration: none;
     font-size: 24px;
-    color: #666; 
+    color: #666;
 }
 
 a:hover {
-    color: #000; 
+    color: #000;
 }
-.logo-login{
+
+/* Logo login container styles */
+.logo-login {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo-login h3{
+
+.logo-login h3 {
     font-size: 42px;
     color: black;
     font-family: 'Cabin', sans-serif;
     font-weight: 400;
 }
-.footer-container{
+
+/* Footer container styles */
+.footer-container {
     display: flex;
-justify-content: center;
-gap: 400px;
-padding: 40px;
+    justify-content: center;
+    gap: 400px;
+    padding: 40px;
 }
-.logo-footer{
+
+/* Logo in the footer styles */
+.logo-footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo-footer img{
+
+.logo-footer img {
     width: 100px;
 }
-.logo-footer h3{
+
+.logo-footer h3 {
     font-size: 70px;
     color: black;
     font-family: 'Cabin', sans-serif;
     font-weight: 400;
 }
-.footer-container .middle h5{
+
+/* Middle text in the footer styles */
+.footer-container .middle h5 {
     font-size: 24px;
     font-family: 'Cabin', sans-serif;
     text-align: center;
     font-weight: 100;
     margin-top: -52px;
 }
-footer{
+
+/* Footer styles */
+footer {
     border-top: solid 4px #cfcfcf;
 }
-.cta_container{
+
+/* Call to action container styles */
+.cta_container {
     text-align: center;
     padding: 0px 164px;
     margin: 100px 0px;
 }
-.cta_container .big-title{
+
+.cta_container .big-title {
     font-size: 80px;
     text-align: left;
     word-spacing: -52px;
     max-width: 900px;
 }
-.cta_container .steps-container{
+
+/* Steps container styles */
+.cta_container .steps-container {
     display: flex;
     gap: 100px;
 }
-.steps-container img{
-   width: 180px; 
+
+.steps-container img {
+    width: 180px;
 }
-.steps-container h2{
+
+.steps-container h2 {
     font-size: 42px;
 }
-.steps-container p{
+
+.steps-container p {
     font-size: 22px;
     font-family: 'Rubik Mono One', sans-serif;
 }
-.cta_button{
+
+/* Call to action button styles */
+.cta_button {
     background: #3726FF;
     font-size: 32px;
     color: white;
@@ -266,29 +322,35 @@ footer{
     transition: ease .2s;
 }
 
-.cta_button:hover{
+.cta_button:hover {
     background: #ff0000;
     letter-spacing: 5px;
 }
-.quote{
+
+/* Quote container styles */
+.quote {
     background-color: #3726FF;
     padding: 80px 80px;
     text-align: center;
     margin: 600px 0px 0px 0px;
 }
-.quote h1{
+
+.quote h1 {
     color: white;
     font-weight: 100;
     font-size: 42px;
 }
 
-.dashboard-container{
+/* Dashboard container styles */
+.dashboard-container {
     display: flex;
     justify-content: center;
     gap: 60px;
     padding: 172px 0px;
 }
-.student-info{
+
+/* Student info styles */
+.student-info {
     display: flex;
     font-family: 'Cabin', sans-serif;
     justify-content: space-between;
@@ -298,17 +360,23 @@ footer{
     font-size: 18px;
     font-weight: 400;
     border-radius: 14px;
-    margin:0px 0px 10px 0px;
+    margin: 0px 0px 10px 0px;
     transition: ease.2s;
 }
-.student-info-block{
+
+/* Student info block styles */
+.student-info-block {
     width: 1240px;
     padding: 10px;
 }
-.student-info:hover{
+
+/* Hover effect for student info */
+.student-info:hover {
     transform: scale(1.05);
     background: #181163;
 }
+
+/* Upload block styles */
 .upload-block {
     display: flex;
     flex-direction: column;
@@ -325,9 +393,10 @@ footer{
     color: white;
     font-weight: 400;
     text-align: center;
-    margin-bottom: 20px; /* Add some spacing between the title and the button */
+    margin-bottom: 20px;
 }
 
+/* Custom file upload button styles */
 .custom-file-upload {
     display: inline-block;
     font-family: 'Rubik Mono One', sans-serif;
@@ -346,6 +415,7 @@ footer{
     transform: scale(1.05);
 }
 
+/* Styling for the file input element */
 .custom-file-upload input[type="file"] {
     display: none;
 }
@@ -355,6 +425,7 @@ footer{
     margin-left: 10px;
 }
 
+/* Upload button styles */
 .upload-button {
     background-color: black;
     font-family: 'Rubik Mono One', sans-serif!important;
@@ -370,6 +441,7 @@ footer{
     padding-right: 10px;
 }
 
+/* Styling for the upload form */
 #upload-form {
     width: 550px!important;
     text-align: center;
@@ -381,6 +453,7 @@ footer{
     padding: 10px 20px;
     transition: ease.2s;
 }
+
 #upload-form button[type="submit"]:hover {
     letter-spacing: 2px;
     background-color: #FF00D6;
