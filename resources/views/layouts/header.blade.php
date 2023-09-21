@@ -1,8 +1,9 @@
 <header>
     <ul>
-        <li><a href="{{ url('/') }}"><img src="{{ asset('img/logo-quizer.svg') }}" alt="Quizzer Logo" /></a></li> 
+       
         @if (Route::has('login'))
         @auth
+        <li><img src="{{ asset('img/logo-quizer.svg') }}" alt="Quizzer Logo" /></li> 
         <li>Technische hulp</li>
         <li class="auth-button">
         <form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -11,6 +12,7 @@
                 </form>
                 </li>
         @else
+        <li><img src="{{ asset('img/logo-quizer.svg') }}" alt="Quizzer Logo" /></li> 
         <li>FAQ</li>
         <li>Quiz</li>
         <li>Extra-uitleg</li>

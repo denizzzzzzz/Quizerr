@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Rubik+Mono+One&display=swap');
 
+.quiz{
 
-header ul{
+    margin: -10px!important;
+}
+header ul {
     display: flex;
     gap: 70px;
     align-items: center;
     padding: 0px;
     height: 63px;
 }
-header li{
+
+header li {
     font-family: 'Rubik Mono One', sans-serif;
     font-weight: 400;
     font-size: 30px;
@@ -16,48 +20,59 @@ header li{
     cursor: pointer;
     transition: ease.2s;
 }
-header li:hover{
+
+header li:hover {
     color: #3726FF;
 }
-header{
+
+header {
     position: absolute;
     width: 100vw;
 }
-header img{
+
+header img {
     width: 80px;
 }
 
-.footer-container{
+.footer-container {
     display: flex;
-justify-content: center;
-gap: 400px;
-padding: 40px;
+    justify-content: center;
+    gap: 400px;
+    padding: 40px;
 }
-.logo-footer{
+
+.logo-footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo-footer img{
+
+.logo-footer img {
     width: 100px;
 }
-.logo-footer h3{
+
+.logo-footer h3 {
     font-size: 70px;
     color: black;
     font-family: 'Cabin', sans-serif;
     font-weight: 400;
 }
-.footer-container .middle h5{
+
+.footer-container .middle h5 {
     font-size: 24px;
     font-family: 'Cabin', sans-serif;
     text-align: center;
     font-weight: 100;
     margin-top: -52px;
 }
-footer{
+
+footer {
     border-top: solid 4px #cfcfcf;
 }
-.question-count h2{
+.quiz body{
+    overflow: hidden;
+}
+.question-count h2 {
     background-color: black;
     font-size: 24px;
     border-radius: 50px;
@@ -71,21 +86,185 @@ footer{
     right: 10px;
     font-weight: 100;
 }
-.questions-container{
-    padding: 200px 0px;
+
+.questions-container {
+    padding: 80px 0px 138px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.question{
+
+.question {
     font-family: 'Cabin', sans-serif;
     font-size: 42px;
     text-align: center;
+    margin-bottom: 167px;
+    color: black;
+    padding: 82px;
+    font-weight: 100;
 }
-.error-no-questions{
+
+.error-no-questions {
     text-align: center;
     font-size: 60px;
     font-family: 'Rubik Mono One', sans-serif;
     color: red;
     padding: 300px 0px;
+}
+
+.answer_a {
+    background-color: #3726FF;
+    color: white;
+    padding: 20px 50px 20px 0px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+    border-radius: 50px;
+    border: none;
+    transition: ease.3s;
+}
+
+.answer_a:hover {
+    letter-spacing: 5px;
+    cursor: pointer;
+    padding: 20px 80px 20px 60px;
+}
+
+.answer_a::before {
+    content: "A";
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 32px;
+    background-color: black;
+    padding: 11px 17px;
+    border-radius: 100%;
+    font-weight: 100;
+    margin: 10px 35px 0px 10px;
+}
+
+.answer_b {
+    background-color: #DC136C;
+    color: white;
+    padding: 20px 50px 20px 0px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+    border-radius: 50px;
+    border: none;
+    transition: ease.3s;
+}
+
+.answer_b:hover {
+    letter-spacing: 5px;
+    cursor: pointer;
+    padding: 20px 80px 20px 60px;
+}
+
+.answer_b::before {
+    content: "B";
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 32px;
+    background-color: black;
+    padding: 11px 17px;
+    border-radius: 100%;
+    font-weight: 100;
+    margin: 10px 35px 0px 10px;
+}
+
+.answer_c {
+    background-color: #FFBF00;
+    color: white;
+    padding: 20px 50px 20px 0px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+    border-radius: 50px;
+    border: none;
+    transition: ease.3s;
+}
+
+.answer_c:hover {
+    letter-spacing: 5px;
+    cursor: pointer;
+    padding: 20px 80px 20px 60px;
+}
+
+.answer_c::before {
+    content: "C";
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 32px;
+    background-color: black;
+    padding: 11px 17px;
+    border-radius: 100%;
+    font-weight: 100;
+    margin: 10px 35px 0px 10px;
+}
+
+.answer_container {
+    display: flex;
+    row-gap: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navi-buttons {
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+}
+.check-button{
+    padding: 20px;
+    font-size: 32px;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+.answer_selected {
+    background-color: black;
+}
+.correct-answer{
+    background-color: #50eb10;
+}
+
+.wrong-answer{
+    background-color: red;
+}
+.formpje{
+    padding: 600px 0px;
+}
+.quiz-complete-message{
+    text-align: center;
+}
+.get-results{
+    margin: 300px;
+    padding: 20px;
+    font-size: 32px;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+@keyframes fadeInSlow {
+    from {
+        transform: scale(0);;
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.fade-in-slow {
+    animation: fadeInSlow 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn .2s ease-in-out;
 }

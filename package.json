@@ -21,6 +21,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@fortawesome/free-solid-svg-icons": "^6.4.2",
         "tailwind": "^4.0.0"
     }
 }
