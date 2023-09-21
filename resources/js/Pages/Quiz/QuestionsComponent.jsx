@@ -10,7 +10,6 @@ export default function QuestionsComponent(props) {
   const [hasQuestionBeenChecked, setHasQuestionBeenChecked] = useState(false);
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
   const totalQuestions = questions.length;
-  const [isInitialRender, setIsInitialRender] = useState(true);
 
   const goToNextQuestion = () => {
     if (currentQuestionIndex === totalQuestions - 1) {
@@ -38,24 +37,30 @@ export default function QuestionsComponent(props) {
     if (!hasQuestionBeenChecked) {
       const correctAnswer = currentQuestion.correct_answer;
       const questionId = currentQuestion.question_id;
-      
       const selectedAnswerLowerCase = selectedAnswer.toLowerCase();
-      let questionsProgress = [
-        questionId,
-        isAnswerCorrect,
-      ];
+      let isCorrect = false; 
+  
       if (selectedAnswer && selectedAnswerLowerCase === correctAnswer.toLowerCase()) {
-        setIsAnswerCorrect(true);
-
-      } else {
+        isCorrect = true; 
+      }
+  
+      setIsAnswerCorrect(isCorrect); 
+  
+      if (!isCorrect) {
         setShowCorrectAnswer(true);
         const selectedButton = document.querySelector(`.answer_${selectedAnswer}`);
         if (selectedButton) {
           selectedButton.classList.add('wrong-answer');
         }
       }
-      localStorage.setItem("voortgang",questionsProgress)
 
+      let questionsProgress = JSON.parse(localStorage.getItem("voortgang")) || [];
+      const newQuestionsProgress = [...questionsProgress, {
+        questionId,
+        isAnswerCorrect: isCorrect,
+      }];
+      localStorage.setItem("voortgang", JSON.stringify(newQuestionsProgress));
+  
       setHasQuestionBeenChecked(true);
       setTimeout(() => {
         goToNextQuestion();
@@ -63,7 +68,6 @@ export default function QuestionsComponent(props) {
       }, 2000); 
     }
   };
-
   
   return (
     <div className='quiz'>
@@ -123,9 +127,6 @@ export default function QuestionsComponent(props) {
           </div>
         ) : currentQuestionIndex === totalQuestions ? (
           <div>
-            <button className="get-results" onClick={() => handleGetResultsClick()}>
-              Haal je resultaten op!
-            </button>
           </div>
         ) : null}
         {currentQuestion ? (
