@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-export default function QuestionsComponent({ questions }) {
+export default function QuizComponent({ questions }) {
   // Initaliseer usestate variabelen.
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // useState functie met een standaard waarde van 0 bedoeld voor het navigeren door vragen.
   const [selectedAnswer, setSelectedAnswer] = useState(null); // useState functie met een standaard waarde van null bedoeld voor het checken of een antwoord selected is en welke.
   const [correctAnswer, setCorrectAnswer] = useState(false); // useState functie met een standaar bool waarde van false, puur en alleen om later isCorrect op true te kunnen zetten.
   const [hasQuestionBeenChecked, setHasQuestionBeenChecked] = useState(false); // useState functie met een standaard bool waarde van false voor het checken of dat er op de controleren knop is gedrukt dus checked als in gecontroleerd.
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false); // useState functie met een standaard bool waarde van false voor het later forceren van het laten zien van de het juiste antwoord.
-
   // Bekijk het aantal objecten in de array en voeg dit toe aan de constant totalQuestions.
   const totalQuestions = questions.length;
 
@@ -52,8 +51,9 @@ export default function QuestionsComponent({ questions }) {
       const correctAnswer = currentQuestion.correct_answer.toLowerCase();
       // Haal de id van de vraag op.
       const questionId = currentQuestion.question_id;
-      
       // Als het geselecteerde antwoord gelijk is aan correctAnswer zet correctAnswer op true, anders false.
+
+      const isCorrect = selectedAnswer === correctAnswer;
       if (selectedAnswer === correctAnswer) {
         setCorrectAnswer(true);
       } else {
@@ -76,6 +76,7 @@ export default function QuestionsComponent({ questions }) {
       // Creëer een nieuw object dat de id en het antwoord bevat.
       const quizProgress = [...score, {
         questionId,
+        isCorrect,
         selectedAnswer,
       }];
       // Sla de score op in localStorage dus de questionId en het selectedAnswer.
@@ -86,10 +87,16 @@ export default function QuestionsComponent({ questions }) {
       
       // Gebruik setTimeout om een vertraging van 2 seconden in te stellen voordat goToNextQuestion wordt aangeroepen en je 
       // naar de volgende vraag wordt gestuurd en zet showCorrectAnswer op false voor de volgende vraag.
-      setTimeout(() => {
-        goToNextQuestion();
-        setShowCorrectAnswer(false);
-      }, 2000); 
+      if (isLastQuestion) {
+        localStorage.setItem("totaal-vragen", JSON.stringify(totalQuestions));
+        window.location.href = '/results';
+      } else {
+        
+        setTimeout(() => {
+          goToNextQuestion();
+          setShowCorrectAnswer(false);
+        }, 2000);
+      }
     }
   };
 
@@ -164,15 +171,7 @@ export default function QuestionsComponent({ questions }) {
               </div>
             </div>
           </div>
-        ) : currentQuestionIndex === totalQuestions ? (
-          <div>
-
-          </div>
-        ) : (<div>
-          <h1>
-          Hello world
-          </h1>
-        </div>)}
+        ): <h1 className='error-no-questions'>Jou docent heeft nog geen vragen geupload....</h1>}
         {currentQuestion ? (
           <div className='navi-buttons'>
             {/* Onclick voer de functie checkAnswer uit, knop is uitgeschakeld als hasQuestionBeenChecked true is */}

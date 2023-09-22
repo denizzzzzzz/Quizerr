@@ -268,6 +268,27 @@ a:hover {
     font-weight: 100;
     margin-top: -52px;
 }
+/* Add this CSS code to your existing stylesheet */
+
+/* Styling for the grid container */
+.question-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    background: #262626;
+    border-radius: 10px;
+    padding: 0px 0px 0px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 27px;
+    font-weight: 400;
+    margin: 0px 0px 24px 0px;
+    transition: ease 0.2s;
+}
+
+/* Hover effect for the grid items */
+.question-container:hover {
+    transform: scale(1.01);
+}
 
 /* Footer styles */
 footer {
@@ -352,8 +373,8 @@ footer {
 /* Student info styles */
 .student-info {
     display: flex;
+    flex-direction: column;
     font-family: 'Cabin', sans-serif;
-    justify-content: space-between;
     background: #3726FF;
     color: white;
     padding: 2px 40px;
@@ -370,10 +391,8 @@ footer {
     padding: 10px;
 }
 
-/* Hover effect for student info */
-.student-info:hover {
-    transform: scale(1.05);
-    background: #181163;
+.student-info h2{
+    font-size: 42px;
 }
 
 /* Upload block styles */
@@ -416,9 +435,7 @@ footer {
 }
 
 /* Styling for the file input element */
-.custom-file-upload input[type="file"] {
-    display: none;
-}
+
 
 .custom-file-upload span {
     font-size: 24px;

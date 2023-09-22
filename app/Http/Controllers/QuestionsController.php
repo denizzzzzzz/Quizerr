@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\Result;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
@@ -20,7 +21,7 @@ class QuestionsController extends Controller
         // Controleer of er daadwerkelijk een bestand is geüpload
         if ($request->hasFile('csv_file')) {
             $file = $request->file('csv_file');
-            
+
             // Lees de inhoud van het CSV-bestand en converteer het naar een array
             $data = array_map('str_getcsv', file($file->getPathname()));
 
@@ -52,16 +53,20 @@ class QuestionsController extends Controller
         // Redirect naar de startpagina met een succesbericht
         return redirect('/')->with('success', 'CSV file uploaded and data inserted successfully');
     }
-
-    // Methode voor het weergeven van de vragenpagina
     public function index()
     {
-        // Haal alle vragen op uit de database
         $questions = Question::all();
+        $results = Result::all();
 
-        // Render de vragenpagina met de vragen als data
-        return Inertia::render('Quiz/QuestionsComponent', [
-            'questions' => $questions,
-        ]);
+        return view('dashboard')
+        ->with('questions', $questions)
+        ->with('results', $results);
+    }
+    public function create()
+    {
+        $questions = Question::all();
+        
+        return view('create-questions')
+    ->with('questions', $questions);
     }
 }

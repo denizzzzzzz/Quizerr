@@ -3,30 +3,28 @@
 @section('content')
 <div class="dashboard">
     <div class="dashboard-container">
-    <div class="student-info-block">
+        <div class="student-info-block">
             <div class="student-info">
-            <h1>Jaap Daap</h1>
-            <h1 clas="points">28/30</h1>
-            </div>
-            <div class="student-info">
-            <h1>Erik Zweerik</h1>
-            <h1>22/30</h1>
-            </div>
-            <div class="student-info">
-            <h1>John Ko</h1>
-            <h1>12/30</h1>
-            </div>
-            <div class="student-info">
-            <h1>Soft Ware</h1>
-            <h1>20/30</h1>
-            </div>
-            <div class="student-info">
-            <h1>Lets Go</h1>
-            <h1>30/30</h1>
-            </div>
-            <div class="student-info">
-            <h1>Test Data</h1>
-            <h1>18/30</h1>
+                <?php $currentStudentId = null; ?> {{-- Initialize $currentStudentId --}}
+                @foreach ($results as $result)
+                @if ($result->student_id !== $currentStudentId)
+                {{-- Display student name --}}
+                <h2>{{ $result->student_name }}</h2>
+                <?php $currentStudentId = $result->student_id; ?>
+                @endif
+                @unless (!$question = $questions->firstWhere('question_id', $result->question_id))
+                <div class="question-container">
+                    <p>{{ $question->question }}</p>
+                    <ul class="answer-list">
+                        <li>A: {{ $question->answer_a }}</li>
+                        <li>B: {{ $question->answer_b }}</li>
+                        <li>C: {{ $question->answer_c }}</li>
+                    </ul>
+                    <p>Antwoord gekozen: {{ $result->selected_answer }}</p>
+                    <p>Het goede antwoord was: {{ $question->correct_answer }}</p>
+                </div>
+                @endunless
+                @endforeach
             </div>
         </div>
         <div class="upload-block">
@@ -34,11 +32,10 @@
             <form action="/upload" method="POST" enctype="multipart/form-data" id="upload-form">
                 @csrf
                 <label for="csv_file" class="custom-file-upload">
-                <input type="file" id="csv_file" name="csv_file">
-                <span>Bestand kiezen</span>
-            </label>
-            <button type="submit" class="upload-button">Upload uw Vragen</button>
-        </div>
+                    <input type="file" id="csv_file" name="csv_file">
+                    <span>Bestand kiezen</span>
+                </label>
+                <button type="submit" class="upload-button">Upload uw Vragen</button>
             </form>
         </div>
     </div>
