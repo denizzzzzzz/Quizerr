@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-export default function QuizComponent({ questions }) {
+export default function QuizComponent({ questions, open_questions }) {
+  console.log(open_questions);
   // Initaliseer usestate variabelen.
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // useState functie met een standaard waarde van 0 bedoeld voor het navigeren door vragen.
   const [selectedAnswer, setSelectedAnswer] = useState(null); // useState functie met een standaard waarde van null bedoeld voor het checken of een antwoord selected is en welke.
@@ -10,9 +11,20 @@ export default function QuizComponent({ questions }) {
   const [hasQuestionBeenChecked, setHasQuestionBeenChecked] = useState(false); // useState functie met een standaard bool waarde van false voor het checken of dat er op de controleren knop is gedrukt dus checked als in gecontroleerd.
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false); // useState functie met een standaard bool waarde van false voor het later forceren van het laten zien van de het juiste antwoord.
   // Bekijk het aantal objecten in de array en voeg dit toe aan de constant totalQuestions.
-  const totalQuestions = questions.length;
+ 
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // ES6 array destructuring to swap elements
+    }
+    return array;
+    console.log(array)
+}
 
-  // Bekijk of dat we bij de laatste vraag zijn.
+// Combine and shuffle the questions
+const allQuetions = shuffleArray([...questions, ...open_questions]);
+const totalQuestions = allQuetions.length;
+console.log(allQuetions);
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
 
   // Functie voor het navigeren naar volgende vraag.
@@ -27,7 +39,7 @@ export default function QuizComponent({ questions }) {
       setHasQuestionBeenChecked(false);
       setShowCorrectAnswer(false);
     } else {
-      // Hier moet nog mijn code voor het versturen van de score komen....
+     
     }
   };
 

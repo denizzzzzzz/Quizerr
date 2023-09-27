@@ -140,9 +140,9 @@ footer {
 }
 
 .answer_a:hover {
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     cursor: pointer;
-    padding: 20px 80px 20px 60px;
+    padding: 20px 60px 20px 40px;
 }
 
 .answer_a::before {
@@ -170,9 +170,9 @@ footer {
 }
 
 .answer_b:hover {
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     cursor: pointer;
-    padding: 20px 80px 20px 60px;
+    padding: 20px 60px 20px 40px;
 }
 
 .answer_b::before {
@@ -200,9 +200,9 @@ footer {
 }
 
 .answer_c:hover {
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     cursor: pointer;
-    padding: 20px 80px 20px 60px;
+    padding: 20px 60px 20px 40px;
 }
 
 .answer_c::before {
@@ -233,9 +233,19 @@ footer {
 }
 
 .check-button {
-    padding: 20px;
     font-size: 32px;
     font-family: 'Rubik Mono One', sans-serif;
+    background: #3726FF;
+    color: white;
+    border: white;
+    border-radius: 50px;
+    padding: 16px 80px;
+    transition: ease .2s;
+    cursor: pointer;
+}
+.check-button:hover{
+transform: scale(1.05);
+background: black;
 }
 
 /* Stijl voor geselecteerd antwoord */
@@ -321,17 +331,23 @@ footer {
   
   /* Score styles */
   .score {
-    font-size: 36px;
+    font-family: 'Cabin', sans-serif;
     font-weight: bold;
     margin-bottom: 30px;
-    color: #007acc; /* Adjust the color to your preference */
+    font-size: 42px;
+    color: white;
+    background-color: #09588d;
+    padding: 28px 135px;
+    margin-top: 100px;
   }
   
   /* Submit score title styles */
   .submit-score-title {
-    font-size: 24px;
+    font-family: 'Cabin', sans-serif;
+    font-size: 32px;
     margin-bottom: 10px;
     text-align: center;
+ 
   }
   
   /* Form container styles */
@@ -343,8 +359,11 @@ footer {
   
   /* Name label styles */
   .name-label {
-    font-size: 18px;
+    font-family: 'Cabin', sans-serif;
+    font-size:32px;
     margin-bottom: 5px;
+    margin-top: 60px;
+ 
   }
   
   /* Name input styles */
@@ -355,20 +374,22 @@ footer {
     width: 100%;
     max-width: 300px;
     font-size: 16px;
+   
   }
   
   /* Submit button styles */
   .submit-button {
-    background-color: #007acc; /* Adjust the button background color to your preference */
+    font-size: 32px;
+    font-family: 'Rubik Mono One', sans-serif;
+    background: #3726FF;
     color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
+    border: white;
+    border-radius: 50px;
+    padding: 16px 80px;
+    transition: ease .2s;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  
+    margin-bottom: 200px;
+    margin-top: 40px;
   }
   
   .submit-button:hover {

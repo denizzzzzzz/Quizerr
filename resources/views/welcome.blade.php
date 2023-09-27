@@ -1,13 +1,13 @@
 @extends('layouts.app')
-
 @section('content')
 <div>
     <div class="banner">
         <div class="slogan-container">
             <h1>Quizerr</h1>
-            <h4>Waar kennis getest word.</h4>
+            <h2>Waar kennis getest word.</h2>
         </div>
-        <button> <a href="{{ route('quiz') }}"> Start de Quiz</a></button>
+      
+        <button class="cta_main_button"> <a href="{{ route('quiz') }}"> Start de Quiz</a></button>
     </div>
     <div class="cta_container">
         <h2 class="big-title">Learn, Review, Repeat</h2>

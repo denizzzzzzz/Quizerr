@@ -1,6 +1,5 @@
 <header>
     <ul>
-       
         @if (Route::has('login'))
         @auth
         <li><img src="{{ asset('img/logo-quizer.svg') }}" alt="Quizzer Logo" /></li> 

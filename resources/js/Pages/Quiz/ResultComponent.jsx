@@ -60,7 +60,7 @@ const ResultComponent = () => {
         <h1 className='submit-score-title'>Dien je score in:</h1>
         <div className='score-form'>
           <label  className='name-label'>
-            Naam:
+            Vul je naam in:
           </label>
           <input
             type="text"
@@ -70,7 +70,7 @@ const ResultComponent = () => {
             value={studentName}
             onChange={(e) => setStudentName(e.target.value)}
           />
-          <button className='submit-button' onClick={handleSubmit}>Submit</button>
+          <button className='submit-button' onClick={handleSubmit}>Verzenden</button>
         </div>
       </div>
       <Footer />

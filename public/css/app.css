@@ -13,6 +13,7 @@
     background-size: cover;
     height: 800px;
     width: 100vw;
+    padding: 100px 0px;
 }
 
 /* Body styles */
@@ -58,30 +59,32 @@ header img {
     color: white;
     background: #32323271;
     text-align: center;
-    position: absolute;
-    top: 28%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 60px;
+    margin: 150px 200px;
 }
 
 .slogan-container h1 {
     font-size: 80px;
-    padding: 0px 237px;
-    line-height: 0px;
     letter-spacing: 3px;
     opacity: .9;
+    margin: 0px;
 }
 
-.slogan-container h4 {
+.banner h2 {
     font-size: 22px;
     font-weight: 100;
-    top: -40px;
+    text-align: center;
     opacity: .9;
+    color: white;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
 }
-
+.banner{
+    text-align: center;
+}
 /* Button styles within the banner */
-.banner button a {
+.cta_main_button a,
+.cta_main_button{
     background: #3726FF;
     font-size: 43px;
     font-family: 'Rubik Mono One', sans-serif;
@@ -92,15 +95,17 @@ header img {
     font-weight: 100;
     cursor: pointer;
     text-transform: uppercase;
-    position: absolute;
-    top: 53%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     transition: ease .2s;
 }
 
-.banner button a:hover {
-    background: #ff0000;
+.cta_main_button a:hover {
+    background: #b62020;
+    color: white;
+    letter-spacing: 5px;
+}
+.cta_main_button:hover{
+    background: #b62020;
+    color: white;
     letter-spacing: 5px;
 }
 

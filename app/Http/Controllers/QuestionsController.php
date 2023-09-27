@@ -62,11 +62,4 @@ class QuestionsController extends Controller
         ->with('questions', $questions)
         ->with('results', $results);
     }
-    public function create()
-    {
-        $questions = Question::all();
-        
-        return view('create-questions')
-    ->with('questions', $questions);
-    }
 }
